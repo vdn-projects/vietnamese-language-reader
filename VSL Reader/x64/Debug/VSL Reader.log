@@ -1,0 +1,216 @@
+﻿Build started 1/17/2014 9:40:30 AM.
+     1>Project "D:\Study hub\Projects\Sign Language\VSL Reader\VSL Reader\VSL Reader\VSL Reader.vcxproj" on node 2 (Build target(s)).
+     1>ClCompile:
+         C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\bin\x86_amd64\CL.exe /c /Zi /nologo /W3 /WX- /sdl /Od /D _CRT_SECURE_NO_WARNINGS /D WIN32 /D _WINDOWS /D _DEBUG /D _MBCS /Gm /EHsc /RTC1 /MTd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Yc"stdafx.h" /Fp"x64\Debug\VSL Reader.pch" /Fo"x64\Debug\\" /Fd"x64\Debug\vc110.pdb" /FR"x64\Debug\\" /Gd /TP /errorReport:prompt stdafx.cpp
+         stdafx.cpp
+         C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\bin\x86_amd64\CL.exe /c /Zi /nologo /W3 /WX- /sdl /Od /D _CRT_SECURE_NO_WARNINGS /D WIN32 /D _WINDOWS /D _DEBUG /D _MBCS /Gm /EHsc /RTC1 /MTd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Yu"stdafx.h" /Fp"x64\Debug\VSL Reader.pch" /Fo"x64\Debug\\" /Fd"x64\Debug\vc110.pdb" /FR"x64\Debug\\" /Gd /TP /errorReport:prompt Gabor.cpp SubFunctions.cpp "VSL Reader.cpp" "VSL ReaderDlg.cpp" VSLFDA.cpp VSLHandFeature.cpp VSLHandFunctions.cpp VSLHandSpace.cpp VSLLightPro.cpp VSLSegmentation.cpp VSLStreamRender.cpp
+         VSLStreamRender.cpp
+     1>VSLStreamRender.cpp(247): warning C4244: 'argument' : conversion from 'pxcF32' to 'int', possible loss of data
+     1>VSLStreamRender.cpp(251): warning C4244: 'argument' : conversion from 'pxcF32' to 'int', possible loss of data
+         VSLSegmentation.cpp
+         VSLLightPro.cpp
+         VSLHandSpace.cpp
+         VSLHandFunctions.cpp
+     1>VSLHandFunctions.cpp(104): warning C4267: '=' : conversion from 'size_t' to 'int', possible loss of data
+         VSLHandFeature.cpp
+         VSLFDA.cpp
+         VSL ReaderDlg.cpp
+         VSL Reader.cpp
+         SubFunctions.cpp
+     1>SubFunctions.cpp(50): warning C4090: 'initializing' : different '__unaligned' qualifiers
+         Gabor.cpp
+         Generating Code...
+       Link:
+         C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\bin\x86_amd64\link.exe /ERRORREPORT:PROMPT /OUT:"D:\Study hub\Projects\Sign Language\VSL Reader\VSL Reader\x64\Debug\VSL Reader.exe" /INCREMENTAL /NOLOGO libpxc_d.lib libpxcutils_d.lib opencv_core248d.lib opencv_features2d248d.lib opencv_flann248d.lib opencv_gpu248d.lib opencv_highgui248d.lib opencv_imgproc248d.lib opencv_legacy248d.lib opencv_ml248d.lib opencv_objdetect248d.lib opencv_video248d.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /manifestinput:"C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\Include\Manifest\dpiaware.manifest" /DEBUG /PDB:"D:\Study hub\Projects\Sign Language\VSL Reader\VSL Reader\x64\Debug\VSL Reader.pdb" /SUBSYSTEM:WINDOWS /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"D:\Study hub\Projects\Sign Language\VSL Reader\VSL Reader\x64\Debug\VSL Reader.lib" /MACHINE:X64 "x64\Debug\VSL Reader.res"
+         x64\Debug\Gabor.obj
+         x64\Debug\stdafx.obj
+         x64\Debug\SubFunctions.obj
+         "x64\Debug\VSL Reader.obj"
+         "x64\Debug\VSL ReaderDlg.obj"
+         x64\Debug\VSLFDA.obj
+         x64\Debug\VSLHandFeature.obj
+         x64\Debug\VSLHandFunctions.obj
+         x64\Debug\VSLHandSpace.obj
+         x64\Debug\VSLLightPro.obj
+         x64\Debug\VSLSegmentation.obj
+         x64\Debug\VSLStreamRender.obj
+     1>VSLHandSpace.obj : error LNK2019: unresolved external symbol cvCreateMat referenced in function "void __cdecl LoadSpace(class ATL::CStringT<char,class StrTraitMFC<char,class ATL::ChTraitsCRT<char> > >)" (?LoadSpace@@YAXV?$CStringT@DV?$StrTraitMFC@DV?$ChTraitsCRT@D@ATL@@@@@ATL@@@Z)
+     1>VSLLightPro.obj : error LNK2001: unresolved external symbol cvCreateMat
+     1>Gabor.obj : error LNK2001: unresolved external symbol cvCreateMat
+     1>VSLFDA.obj : error LNK2001: unresolved external symbol cvCreateMat
+     1>VSLHandFeature.obj : error LNK2001: unresolved external symbol cvCreateMat
+     1>VSLHandFunctions.obj : error LNK2001: unresolved external symbol cvCreateMat
+     1>VSLLightPro.obj : error LNK2019: unresolved external symbol cvReleaseMat referenced in function __catch$?_Copy@?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QEAAX_K0@Z$1
+     1>Gabor.obj : error LNK2001: unresolved external symbol cvReleaseMat
+     1>VSLFDA.obj : error LNK2001: unresolved external symbol cvReleaseMat
+     1>VSLHandFeature.obj : error LNK2001: unresolved external symbol cvReleaseMat
+     1>VSLHandFunctions.obj : error LNK2001: unresolved external symbol cvReleaseMat
+     1>Gabor.obj : error LNK2019: unresolved external symbol cvGetSubRect referenced in function "struct CvMat * * * __cdecl GaborConv(void *)" (?GaborConv@@YAPEAPEAPEAUCvMat@@PEAX@Z)
+     1>VSLFDA.obj : error LNK2001: unresolved external symbol cvGetSubRect
+     1>VSLHandFeature.obj : error LNK2001: unresolved external symbol cvGetSubRect
+     1>Gabor.obj : error LNK2019: unresolved external symbol cvSet2D referenced in function "void __cdecl InitGaborKernel(void)" (?InitGaborKernel@@YAXXZ)
+     1>VSLHandFeature.obj : error LNK2001: unresolved external symbol cvSet2D
+     1>VSLStreamRender.obj : error LNK2001: unresolved external symbol cvSet2D
+     1>Gabor.obj : error LNK2019: unresolved external symbol cvGetSize referenced in function "void __cdecl Magnitude(void *,struct CvMat *)" (?Magnitude@@YAXPEAXPEAUCvMat@@@Z)
+     1>SubFunctions.obj : error LNK2001: unresolved external symbol cvGetSize
+     1>VSLLightPro.obj : error LNK2001: unresolved external symbol cvGetSize
+     1>Gabor.obj : error LNK2019: unresolved external symbol cvCopy referenced in function "struct CvMat * * * __cdecl GaborConv(void *)" (?GaborConv@@YAPEAPEAPEAUCvMat@@PEAX@Z)
+     1>VSLFDA.obj : error LNK2001: unresolved external symbol cvCopy
+     1>VSLHandFeature.obj : error LNK2001: unresolved external symbol cvCopy
+     1>VSLHandFunctions.obj : error LNK2001: unresolved external symbol cvCopy
+     1>Gabor.obj : error LNK2019: unresolved external symbol cvSetZero referenced in function "struct CvMat * * * __cdecl GaborConv(void *)" (?GaborConv@@YAPEAPEAPEAUCvMat@@PEAX@Z)
+     1>VSLFDA.obj : error LNK2001: unresolved external symbol cvSetZero
+     1>VSLHandFeature.obj : error LNK2001: unresolved external symbol cvSetZero
+     1>Gabor.obj : error LNK2019: unresolved external symbol cvSplit referenced in function "void __cdecl Magnitude(void *,struct CvMat *)" (?Magnitude@@YAXPEAXPEAUCvMat@@@Z)
+     1>Gabor.obj : error LNK2019: unresolved external symbol cvMerge referenced in function "struct CvMat * * * __cdecl GaborConv(void *)" (?GaborConv@@YAPEAPEAPEAUCvMat@@PEAX@Z)
+     1>VSLHandFeature.obj : error LNK2001: unresolved external symbol cvMerge
+     1>Gabor.obj : error LNK2019: unresolved external symbol cvAdd referenced in function "void __cdecl Magnitude(void *,struct CvMat *)" (?Magnitude@@YAXPEAXPEAUCvMat@@@Z)
+     1>VSLFDA.obj : error LNK2001: unresolved external symbol cvAdd
+     1>VSLLightPro.obj : error LNK2001: unresolved external symbol cvAdd
+     1>Gabor.obj : error LNK2019: unresolved external symbol cvPow referenced in function "void __cdecl Magnitude(void *,struct CvMat *)" (?Magnitude@@YAXPEAXPEAUCvMat@@@Z)
+     1>VSLLightPro.obj : error LNK2001: unresolved external symbol cvPow
+     1>Gabor.obj : error LNK2019: unresolved external symbol cvDFT referenced in function "struct CvMat * * * __cdecl GaborConv(void *)" (?GaborConv@@YAPEAPEAPEAUCvMat@@PEAX@Z)
+     1>VSLHandFeature.obj : error LNK2001: unresolved external symbol cvDFT
+     1>Gabor.obj : error LNK2019: unresolved external symbol cvMulSpectrums referenced in function "struct CvMat * * * __cdecl GaborConv(void *)" (?GaborConv@@YAPEAPEAPEAUCvMat@@PEAX@Z)
+     1>VSLHandFeature.obj : error LNK2001: unresolved external symbol cvMulSpectrums
+     1>Gabor.obj : error LNK2019: unresolved external symbol cvGetOptimalDFTSize referenced in function "void __cdecl InitGaborKernel(void)" (?InitGaborKernel@@YAXXZ)
+     1>VSLHandFeature.obj : error LNK2001: unresolved external symbol cvGetOptimalDFTSize
+     1>Gabor.obj : error LNK2019: unresolved external symbol cvCopyMakeBorder referenced in function "struct CvMat * * * __cdecl GaborConv(void *)" (?GaborConv@@YAPEAPEAPEAUCvMat@@PEAX@Z)
+     1>VSLHandFeature.obj : error LNK2001: unresolved external symbol cvCopyMakeBorder
+     1>Gabor.obj : error LNK2019: unresolved external symbol cvShowImage referenced in function "void __cdecl ShowGaborFace(void *)" (?ShowGaborFace@@YAXPEAX@Z)
+     1>VSL ReaderDlg.obj : error LNK2001: unresolved external symbol cvShowImage
+     1>VSLHandFeature.obj : error LNK2001: unresolved external symbol cvShowImage
+     1>SubFunctions.obj : error LNK2019: unresolved external symbol cvGetReal2D referenced in function "void __cdecl DispCvArr(void *,char *,bool,char *)" (?DispCvArr@@YAXPEAXPEAD_N1@Z)
+     1>SubFunctions.obj : error LNK2019: unresolved external symbol cvNamedWindow referenced in function "void __cdecl EmbedCvWindow(struct HWND__ *,class ATL::CStringT<char,class StrTraitMFC<char,class ATL::ChTraitsCRT<char> > >,int,int)" (?EmbedCvWindow@@YAXPEAUHWND__@@V?$CStringT@DV?$StrTraitMFC@DV?$ChTraitsCRT@D@ATL@@@@@ATL@@HH@Z)
+     1>SubFunctions.obj : error LNK2019: unresolved external symbol cvResizeWindow referenced in function "void __cdecl EmbedCvWindow(struct HWND__ *,class ATL::CStringT<char,class StrTraitMFC<char,class ATL::ChTraitsCRT<char> > >,int,int)" (?EmbedCvWindow@@YAXPEAUHWND__@@V?$CStringT@DV?$StrTraitMFC@DV?$ChTraitsCRT@D@ATL@@@@@ATL@@HH@Z)
+     1>SubFunctions.obj : error LNK2019: unresolved external symbol cvDestroyWindow referenced in function "void __cdecl EmbedCvWindow(struct HWND__ *,class ATL::CStringT<char,class StrTraitMFC<char,class ATL::ChTraitsCRT<char> > >,int,int)" (?EmbedCvWindow@@YAXPEAUHWND__@@V?$CStringT@DV?$StrTraitMFC@DV?$ChTraitsCRT@D@ATL@@@@@ATL@@HH@Z)
+     1>SubFunctions.obj : error LNK2019: unresolved external symbol cvGetWindowHandle referenced in function "void __cdecl EmbedCvWindow(struct HWND__ *,class ATL::CStringT<char,class StrTraitMFC<char,class ATL::ChTraitsCRT<char> > >,int,int)" (?EmbedCvWindow@@YAXPEAUHWND__@@V?$CStringT@DV?$StrTraitMFC@DV?$ChTraitsCRT@D@ATL@@@@@ATL@@HH@Z)
+     1>VSL ReaderDlg.obj : error LNK2019: unresolved external symbol cvCreateImageHeader referenced in function "protected: virtual int __cdecl CVSLReaderDlg::OnInitDialog(void)" (?OnInitDialog@CVSLReaderDlg@@MEAAHXZ)
+     1>VSLStreamRender.obj : error LNK2001: unresolved external symbol cvCreateImageHeader
+     1>VSL ReaderDlg.obj : error LNK2019: unresolved external symbol cvReleaseImage referenced in function "public: unsigned int __cdecl CVSLReaderDlg::VSLDisplay(void)" (?VSLDisplay@CVSLReaderDlg@@QEAAIXZ)
+     1>VSLStreamRender.obj : error LNK2001: unresolved external symbol cvReleaseImage
+     1>VSL ReaderDlg.obj : error LNK2019: unresolved external symbol cvRectangle referenced in function "public: unsigned int __cdecl CVSLReaderDlg::VSLDisplay(void)" (?VSLDisplay@CVSLReaderDlg@@QEAAIXZ)
+     1>VSL ReaderDlg.obj : error LNK2019: unresolved external symbol cvInitFont referenced in function "protected: virtual int __cdecl CVSLReaderDlg::OnInitDialog(void)" (?OnInitDialog@CVSLReaderDlg@@MEAAHXZ)
+     1>VSL ReaderDlg.obj : error LNK2019: unresolved external symbol cvPutText referenced in function "public: unsigned int __cdecl CVSLReaderDlg::VSLDisplay(void)" (?VSLDisplay@CVSLReaderDlg@@QEAAIXZ)
+     1>VSL ReaderDlg.obj : error LNK2019: unresolved external symbol cvGetTickCount referenced in function "public: unsigned int __cdecl CVSLReaderDlg::VSLDisplay(void)" (?VSLDisplay@CVSLReaderDlg@@QEAAIXZ)
+     1>VSLStreamRender.obj : error LNK2001: unresolved external symbol cvGetTickCount
+     1>VSL ReaderDlg.obj : error LNK2019: unresolved external symbol "void __cdecl cv::fastFree(void *)" (?fastFree@cv@@YAXPEAX@Z) referenced in function "public: __cdecl cv::Mat::~Mat(void)" (??1Mat@cv@@QEAA@XZ)
+     1>VSLHandFunctions.obj : error LNK2001: unresolved external symbol "void __cdecl cv::fastFree(void *)" (?fastFree@cv@@YAXPEAX@Z)
+     1>VSLSegmentation.obj : error LNK2001: unresolved external symbol "void __cdecl cv::fastFree(void *)" (?fastFree@cv@@YAXPEAX@Z)
+     1>VSLStreamRender.obj : error LNK2001: unresolved external symbol "void __cdecl cv::fastFree(void *)" (?fastFree@cv@@YAXPEAX@Z)
+     1>VSL ReaderDlg.obj : error LNK2019: unresolved external symbol "public: __cdecl cv::_InputArray::_InputArray(class cv::Mat const &)" (??0_InputArray@cv@@QEAA@AEBVMat@1@@Z) referenced in function "public: unsigned int __cdecl CVSLReaderDlg::VSLDisplay(void)" (?VSLDisplay@CVSLReaderDlg@@QEAAIXZ)
+     1>VSLSegmentation.obj : error LNK2001: unresolved external symbol "public: __cdecl cv::_InputArray::_InputArray(class cv::Mat const &)" (??0_InputArray@cv@@QEAA@AEBVMat@1@@Z)
+     1>VSL ReaderDlg.obj : error LNK2019: unresolved external symbol "public: void __cdecl cv::Mat::deallocate(void)" (?deallocate@Mat@cv@@QEAAXXZ) referenced in function "public: void __cdecl cv::Mat::release(void)" (?release@Mat@cv@@QEAAXXZ)
+     1>VSLHandFunctions.obj : error LNK2001: unresolved external symbol "public: void __cdecl cv::Mat::deallocate(void)" (?deallocate@Mat@cv@@QEAAXXZ)
+     1>VSLSegmentation.obj : error LNK2001: unresolved external symbol "public: void __cdecl cv::Mat::deallocate(void)" (?deallocate@Mat@cv@@QEAAXXZ)
+     1>VSLStreamRender.obj : error LNK2001: unresolved external symbol "public: void __cdecl cv::Mat::deallocate(void)" (?deallocate@Mat@cv@@QEAAXXZ)
+     1>VSL ReaderDlg.obj : error LNK2019: unresolved external symbol "public: void __cdecl cv::Mat::copySize(class cv::Mat const &)" (?copySize@Mat@cv@@QEAAXAEBV12@@Z) referenced in function "public: __cdecl cv::Mat::Mat(class cv::Mat const &)" (??0Mat@cv@@QEAA@AEBV01@@Z)
+     1>VSLSegmentation.obj : error LNK2001: unresolved external symbol "public: void __cdecl cv::Mat::copySize(class cv::Mat const &)" (?copySize@Mat@cv@@QEAAXAEBV12@@Z)
+     1>VSLStreamRender.obj : error LNK2001: unresolved external symbol "public: void __cdecl cv::Mat::copySize(class cv::Mat const &)" (?copySize@Mat@cv@@QEAAXAEBV12@@Z)
+     1>VSL ReaderDlg.obj : error LNK2019: unresolved external symbol "int __cdecl cv::_interlockedExchangeAdd(int *,int)" (?_interlockedExchangeAdd@cv@@YAHPEAHH@Z) referenced in function "public: __cdecl cv::Mat::Mat(class cv::Mat const &)" (??0Mat@cv@@QEAA@AEBV01@@Z)
+     1>VSLHandFunctions.obj : error LNK2001: unresolved external symbol "int __cdecl cv::_interlockedExchangeAdd(int *,int)" (?_interlockedExchangeAdd@cv@@YAHPEAHH@Z)
+     1>VSLSegmentation.obj : error LNK2001: unresolved external symbol "int __cdecl cv::_interlockedExchangeAdd(int *,int)" (?_interlockedExchangeAdd@cv@@YAHPEAHH@Z)
+     1>VSLStreamRender.obj : error LNK2001: unresolved external symbol "int __cdecl cv::_interlockedExchangeAdd(int *,int)" (?_interlockedExchangeAdd@cv@@YAHPEAHH@Z)
+     1>VSL ReaderDlg.obj : error LNK2019: unresolved external symbol cvDestroyAllWindows referenced in function "public: unsigned int __cdecl CVSLReaderDlg::VSLDisplay(void)" (?VSLDisplay@CVSLReaderDlg@@QEAAIXZ)
+     1>VSL ReaderDlg.obj : error LNK2019: unresolved external symbol cvLoadImage referenced in function "public: __cdecl CVSLReaderDlg::CVSLReaderDlg(class CWnd *)" (??0CVSLReaderDlg@@QEAA@PEAVCWnd@@@Z)
+     1>VSL ReaderDlg.obj : error LNK2019: unresolved external symbol cvWaitKey referenced in function "public: unsigned int __cdecl CVSLReaderDlg::VSLDisplay(void)" (?VSLDisplay@CVSLReaderDlg@@QEAAIXZ)
+     1>VSLHandFeature.obj : error LNK2001: unresolved external symbol cvWaitKey
+     1>VSL ReaderDlg.obj : error LNK2019: unresolved external symbol "void __cdecl cv::imshow(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &,class cv::_InputArray const &)" (?imshow@cv@@YAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBV_InputArray@1@@Z) referenced in function "public: unsigned int __cdecl CVSLReaderDlg::VSLDisplay(void)" (?VSLDisplay@CVSLReaderDlg@@QEAAIXZ)
+     1>VSLFDA.obj : error LNK2019: unresolved external symbol cvCloneMat referenced in function "public: void __cdecl CFld::SetFldPrjDim(int)" (?SetFldPrjDim@CFld@@QEAAXH@Z)
+     1>VSLLightPro.obj : error LNK2001: unresolved external symbol cvCloneMat
+     1>VSLFDA.obj : error LNK2019: unresolved external symbol cvGetRows referenced in function cvGetRow
+     1>VSLFDA.obj : error LNK2019: unresolved external symbol cvGetCols referenced in function cvGetCol
+     1>VSLHandFunctions.obj : error LNK2001: unresolved external symbol cvGetCols
+     1>VSLFDA.obj : error LNK2019: unresolved external symbol cvGetReal1D referenced in function "private: void __cdecl CFld::CalcLdaSpace(struct CvMat *,struct CvMat *,int)" (?CalcLdaSpace@CFld@@AEAAXPEAUCvMat@@0H@Z)
+     1>VSLFDA.obj : error LNK2019: unresolved external symbol cvConvertScale referenced in function "public: void __cdecl CFld::Lda(struct CvMat *,int *,int)" (?Lda@CFld@@QEAAXPEAUCvMat@@PEAHH@Z)
+     1>VSLHandFunctions.obj : error LNK2001: unresolved external symbol cvConvertScale
+     1>VSLLightPro.obj : error LNK2001: unresolved external symbol cvConvertScale
+     1>VSLFDA.obj : error LNK2019: unresolved external symbol cvAddS referenced in function "private: void __cdecl CFld::CalcLdaSpace(struct CvMat *,struct CvMat *,int)" (?CalcLdaSpace@CFld@@AEAAXPEAUCvMat@@0H@Z)
+     1>VSLFDA.obj : error LNK2019: unresolved external symbol cvSub referenced in function "private: void __cdecl CFld::CalcSwSb(struct CvMat *,int *,struct CvMat *,struct CvMat *)" (?CalcSwSb@CFld@@AEAAXPEAUCvMat@@PEAH00@Z)
+     1>VSLLightPro.obj : error LNK2001: unresolved external symbol cvSub
+     1>VSLFDA.obj : error LNK2019: unresolved external symbol cvDiv referenced in function "private: void __cdecl CFld::CalcLdaSpace(struct CvMat *,struct CvMat *,int)" (?CalcLdaSpace@CFld@@AEAAXPEAUCvMat@@0H@Z)
+     1>VSLLightPro.obj : error LNK2001: unresolved external symbol cvDiv
+     1>VSLFDA.obj : error LNK2019: unresolved external symbol cvAddWeighted referenced in function "private: void __cdecl CFld::CalcSwSb(struct CvMat *,int *,struct CvMat *,struct CvMat *)" (?CalcSwSb@CFld@@AEAAXPEAUCvMat@@PEAH00@Z)
+     1>VSLFDA.obj : error LNK2019: unresolved external symbol cvAbsDiffS referenced in function "private: void __cdecl CFld::CalcLdaSpace(struct CvMat *,struct CvMat *,int)" (?CalcLdaSpace@CFld@@AEAAXPEAUCvMat@@0H@Z)
+     1>VSLLightPro.obj : error LNK2001: unresolved external symbol cvAbsDiffS
+     1>VSLFDA.obj : error LNK2019: unresolved external symbol cvSort referenced in function "private: void __cdecl CFld::CalcLdaSpace(struct CvMat *,struct CvMat *,int)" (?CalcLdaSpace@CFld@@AEAAXPEAUCvMat@@0H@Z)
+     1>VSLFDA.obj : error LNK2019: unresolved external symbol cvGEMM referenced in function "public: int __cdecl CFld::TrainFld(struct CvMat *,int *)" (?TrainFld@CFld@@QEAAHPEAUCvMat@@PEAH@Z)
+     1>VSLFDA.obj : error LNK2019: unresolved external symbol cvMulTransposed referenced in function "private: void __cdecl CFld::CalcSwSb(struct CvMat *,int *,struct CvMat *,struct CvMat *)" (?CalcSwSb@CFld@@AEAAXPEAUCvMat@@PEAH00@Z)
+     1>VSLFDA.obj : error LNK2019: unresolved external symbol cvCalcPCA referenced in function "public: void __cdecl CFld::Pca(struct CvMat *,double)" (?Pca@CFld@@QEAAXPEAUCvMat@@N@Z)
+     1>VSLFDA.obj : error LNK2019: unresolved external symbol cvProjectPCA referenced in function "public: int __cdecl CFld::TrainFld(struct CvMat *,int *)" (?TrainFld@CFld@@QEAAHPEAUCvMat@@PEAH@Z)
+     1>VSLFDA.obj : error LNK2019: unresolved external symbol cvSum referenced in function "public: void __cdecl CFld::Pca(struct CvMat *,double)" (?Pca@CFld@@QEAAXPEAUCvMat@@N@Z)
+     1>VSLLightPro.obj : error LNK2001: unresolved external symbol cvSum
+     1>VSLFDA.obj : error LNK2019: unresolved external symbol __imp_GeneralEig referenced in function "private: void __cdecl CFld::CalcLdaSpace(struct CvMat *,struct CvMat *,int)" (?CalcLdaSpace@CFld@@AEAAXPEAUCvMat@@0H@Z)
+     1>VSLHandFunctions.obj : error LNK2019: unresolved external symbol cvOpenFileStorage referenced in function "public: void __cdecl CHandFunctions::Store2Database(void)" (?Store2Database@CHandFunctions@@QEAAXXZ)
+     1>VSLHandSpace.obj : error LNK2001: unresolved external symbol cvOpenFileStorage
+     1>VSLHandFunctions.obj : error LNK2019: unresolved external symbol cvReleaseFileStorage referenced in function "public: void __cdecl CHandFunctions::Store2Database(void)" (?Store2Database@CHandFunctions@@QEAAXXZ)
+     1>VSLHandSpace.obj : error LNK2001: unresolved external symbol cvReleaseFileStorage
+     1>VSLHandFunctions.obj : error LNK2019: unresolved external symbol cvWriteInt referenced in function "public: void __cdecl CHandFunctions::Store2Database(void)" (?Store2Database@CHandFunctions@@QEAAXXZ)
+     1>VSLHandSpace.obj : error LNK2001: unresolved external symbol cvWriteInt
+     1>VSLHandFunctions.obj : error LNK2019: unresolved external symbol cvWriteString referenced in function "public: void __cdecl CHandFunctions::Store2Database(void)" (?Store2Database@CHandFunctions@@QEAAXXZ)
+     1>VSLHandFunctions.obj : error LNK2019: unresolved external symbol cvWrite referenced in function "public: void __cdecl CHandFunctions::Store2Database(void)" (?Store2Database@CHandFunctions@@QEAAXXZ)
+     1>VSLHandSpace.obj : error LNK2001: unresolved external symbol cvWrite
+     1>VSLHandFunctions.obj : error LNK2019: unresolved external symbol cvGetFileNodeByName referenced in function cvReadByName
+     1>VSLHandSpace.obj : error LNK2001: unresolved external symbol cvGetFileNodeByName
+     1>VSLHandFunctions.obj : error LNK2019: unresolved external symbol cvRead referenced in function cvReadByName
+     1>VSLHandSpace.obj : error LNK2001: unresolved external symbol cvRead
+     1>VSLHandFunctions.obj : error LNK2019: unresolved external symbol "public: __cdecl cv::Exception::Exception(int,class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &,class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &,class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &,int)" (??0Exception@cv@@QEAA@HAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@00H@Z) referenced in function "public: __cdecl cv::Mat::operator struct CvMat(void)const " (??BMat@cv@@QEBA?AUCvMat@@XZ)
+     1>VSLHandFunctions.obj : error LNK2019: unresolved external symbol "public: virtual __cdecl cv::Exception::~Exception(void)" (??1Exception@cv@@UEAA@XZ) referenced in function "public: __cdecl cv::Mat::operator struct CvMat(void)const " (??BMat@cv@@QEBA?AUCvMat@@XZ)
+     1>VSLHandFunctions.obj : error LNK2019: unresolved external symbol "void __cdecl cv::error(class cv::Exception const &)" (?error@cv@@YAXAEBVException@1@@Z) referenced in function "public: __cdecl cv::Mat::operator struct CvMat(void)const " (??BMat@cv@@QEBA?AUCvMat@@XZ)
+     1>VSLHandFunctions.obj : error LNK2019: unresolved external symbol cvCvtColor referenced in function "public: void __cdecl CHandFunctions::HandRecognization(class cv::Mat,struct SMatch *)" (?HandRecognization@CHandFunctions@@QEAAXVMat@cv@@PEAUSMatch@@@Z)
+     1>VSLHandFunctions.obj : error LNK2019: unresolved external symbol cvResize referenced in function "public: void __cdecl CHandFunctions::HandTraining(class ATL::CStringT<char,class StrTraitMFC<char,class ATL::ChTraitsCRT<char> > >)" (?HandTraining@CHandFunctions@@QEAAXV?$CStringT@DV?$StrTraitMFC@DV?$ChTraitsCRT@D@ATL@@@@@ATL@@@Z)
+     1>VSLHandFunctions.obj : error LNK2019: unresolved external symbol cvLoadImageM referenced in function "public: void __cdecl CHandFunctions::HandTraining(class ATL::CStringT<char,class StrTraitMFC<char,class ATL::ChTraitsCRT<char> > >)" (?HandTraining@CHandFunctions@@QEAAXV?$CStringT@DV?$StrTraitMFC@DV?$ChTraitsCRT@D@ATL@@@@@ATL@@@Z)
+     1>VSLHandSpace.obj : error LNK2019: unresolved external symbol cvDotProduct referenced in function "double __cdecl CalcVectorDist(struct CvMat *,struct CvMat *)" (?CalcVectorDist@@YANPEAUCvMat@@0@Z)
+     1>VSLHandSpace.obj : error LNK2019: unresolved external symbol cvNorm referenced in function "double __cdecl CalcVectorDist(struct CvMat *,struct CvMat *)" (?CalcVectorDist@@YANPEAUCvMat@@0@Z)
+     1>VSLLightPro.obj : error LNK2019: unresolved external symbol cvSubRS referenced in function "void __cdecl RunLightPrep(struct CvMat *)" (?RunLightPrep@@YAXPEAUCvMat@@@Z)
+     1>VSLLightPro.obj : error LNK2019: unresolved external symbol cvMinS referenced in function "void __cdecl RunLightPrep(struct CvMat *)" (?RunLightPrep@@YAXPEAUCvMat@@@Z)
+     1>VSLLightPro.obj : error LNK2019: unresolved external symbol cvExp referenced in function "void __cdecl RunLightPrep(struct CvMat *)" (?RunLightPrep@@YAXPEAUCvMat@@@Z)
+     1>VSLLightPro.obj : error LNK2019: unresolved external symbol cvAvg referenced in function "void __cdecl RunLightPrep(struct CvMat *)" (?RunLightPrep@@YAXPEAUCvMat@@@Z)
+     1>VSLLightPro.obj : error LNK2019: unresolved external symbol cvNormalize referenced in function "void __cdecl RunLightPrep(struct CvMat *)" (?RunLightPrep@@YAXPEAUCvMat@@@Z)
+     1>VSLLightPro.obj : error LNK2019: unresolved external symbol cvFilter2D referenced in function "void __cdecl RunLightPrep(struct CvMat *)" (?RunLightPrep@@YAXPEAUCvMat@@@Z)
+     1>VSLSegmentation.obj : error LNK2001: unresolved external symbol "public: virtual class cv::Mat __cdecl cv::_InputArray::getMat(int)const " (?getMat@_InputArray@cv@@UEBA?AVMat@2@H@Z)
+     1>VSLSegmentation.obj : error LNK2001: unresolved external symbol "public: virtual void __cdecl cv::_InputArray::getMatVector(class std::vector<class cv::Mat,class std::allocator<class cv::Mat> > &)const " (?getMatVector@_InputArray@cv@@UEBAXAEAV?$vector@VMat@cv@@V?$allocator@VMat@cv@@@std@@@std@@@Z)
+     1>VSLSegmentation.obj : error LNK2001: unresolved external symbol "public: virtual class cv::GlBuffer __cdecl cv::_InputArray::getGlBuffer(void)const " (?getGlBuffer@_InputArray@cv@@UEBA?AVGlBuffer@2@XZ)
+     1>VSLSegmentation.obj : error LNK2001: unresolved external symbol "public: virtual class cv::GlTexture __cdecl cv::_InputArray::getGlTexture(void)const " (?getGlTexture@_InputArray@cv@@UEBA?AVGlTexture@2@XZ)
+     1>VSLSegmentation.obj : error LNK2001: unresolved external symbol "public: virtual class cv::gpu::GpuMat __cdecl cv::_InputArray::getGpuMat(void)const " (?getGpuMat@_InputArray@cv@@UEBA?AVGpuMat@gpu@2@XZ)
+     1>VSLSegmentation.obj : error LNK2001: unresolved external symbol "public: virtual int __cdecl cv::_InputArray::kind(void)const " (?kind@_InputArray@cv@@UEBAHXZ)
+     1>VSLSegmentation.obj : error LNK2001: unresolved external symbol "public: virtual class cv::Size_<int> __cdecl cv::_InputArray::size(int)const " (?size@_InputArray@cv@@UEBA?AV?$Size_@H@2@H@Z)
+     1>VSLSegmentation.obj : error LNK2001: unresolved external symbol "public: virtual unsigned __int64 __cdecl cv::_InputArray::total(int)const " (?total@_InputArray@cv@@UEBA_KH@Z)
+     1>VSLSegmentation.obj : error LNK2001: unresolved external symbol "public: virtual int __cdecl cv::_InputArray::type(int)const " (?type@_InputArray@cv@@UEBAHH@Z)
+     1>VSLSegmentation.obj : error LNK2001: unresolved external symbol "public: virtual int __cdecl cv::_InputArray::depth(int)const " (?depth@_InputArray@cv@@UEBAHH@Z)
+     1>VSLSegmentation.obj : error LNK2001: unresolved external symbol "public: virtual int __cdecl cv::_InputArray::channels(int)const " (?channels@_InputArray@cv@@UEBAHH@Z)
+     1>VSLSegmentation.obj : error LNK2001: unresolved external symbol "public: virtual bool __cdecl cv::_InputArray::empty(void)const " (?empty@_InputArray@cv@@UEBA_NXZ)
+     1>VSLSegmentation.obj : error LNK2019: unresolved external symbol "public: __cdecl cv::_OutputArray::_OutputArray(class cv::Mat &)" (??0_OutputArray@cv@@QEAA@AEAVMat@1@@Z) referenced in function "public: class cv::Mat __cdecl CVSLSegmentation::handFilter(class cv::Mat,class cv::Rect_<int>,struct _IplImage *)" (?handFilter@CVSLSegmentation@@QEAA?AVMat@cv@@V23@V?$Rect_@H@3@PEAU_IplImage@@@Z)
+     1>VSLSegmentation.obj : error LNK2001: unresolved external symbol "public: virtual bool __cdecl cv::_OutputArray::fixedSize(void)const " (?fixedSize@_OutputArray@cv@@UEBA_NXZ)
+     1>VSLSegmentation.obj : error LNK2001: unresolved external symbol "public: virtual bool __cdecl cv::_OutputArray::fixedType(void)const " (?fixedType@_OutputArray@cv@@UEBA_NXZ)
+     1>VSLSegmentation.obj : error LNK2001: unresolved external symbol "public: virtual bool __cdecl cv::_OutputArray::needed(void)const " (?needed@_OutputArray@cv@@UEBA_NXZ)
+     1>VSLSegmentation.obj : error LNK2001: unresolved external symbol "public: virtual class cv::Mat & __cdecl cv::_OutputArray::getMatRef(int)const " (?getMatRef@_OutputArray@cv@@UEBAAEAVMat@2@H@Z)
+     1>VSLSegmentation.obj : error LNK2001: unresolved external symbol "public: virtual void __cdecl cv::_OutputArray::create(class cv::Size_<int>,int,int,bool,int)const " (?create@_OutputArray@cv@@UEBAXV?$Size_@H@2@HH_NH@Z)
+     1>VSLSegmentation.obj : error LNK2001: unresolved external symbol "public: virtual void __cdecl cv::_OutputArray::create(int,int,int,int,bool,int)const " (?create@_OutputArray@cv@@UEBAXHHHH_NH@Z)
+     1>VSLSegmentation.obj : error LNK2001: unresolved external symbol "public: virtual void __cdecl cv::_OutputArray::create(int,int const *,int,int,bool,int)const " (?create@_OutputArray@cv@@UEBAXHPEBHHH_NH@Z)
+     1>VSLSegmentation.obj : error LNK2001: unresolved external symbol "public: virtual void __cdecl cv::_OutputArray::release(void)const " (?release@_OutputArray@cv@@UEBAXXZ)
+     1>VSLSegmentation.obj : error LNK2001: unresolved external symbol "public: virtual void __cdecl cv::_OutputArray::clear(void)const " (?clear@_OutputArray@cv@@UEBAXXZ)
+     1>VSLSegmentation.obj : error LNK2019: unresolved external symbol "public: __cdecl cv::Mat::Mat(class cv::Mat const &,class cv::Rect_<int> const &)" (??0Mat@cv@@QEAA@AEBV01@AEBV?$Rect_@H@1@@Z) referenced in function "public: class cv::Mat __cdecl cv::Mat::operator()(class cv::Rect_<int> const &)const " (??RMat@cv@@QEBA?AV01@AEBV?$Rect_@H@1@@Z)
+     1>VSLSegmentation.obj : error LNK2019: unresolved external symbol "public: __cdecl cv::Mat::Mat(struct _IplImage const *,bool)" (??0Mat@cv@@QEAA@PEBU_IplImage@@_N@Z) referenced in function "public: class cv::Mat __cdecl CVSLSegmentation::handFilter(class cv::Mat,class cv::Rect_<int>,struct _IplImage *)" (?handFilter@CVSLSegmentation@@QEAA?AVMat@cv@@V23@V?$Rect_@H@3@PEAU_IplImage@@@Z)
+     1>VSLStreamRender.obj : error LNK2001: unresolved external symbol "public: __cdecl cv::Mat::Mat(struct _IplImage const *,bool)" (??0Mat@cv@@QEAA@PEBU_IplImage@@_N@Z)
+     1>VSLSegmentation.obj : error LNK2019: unresolved external symbol "public: void __cdecl cv::Mat::copyTo(class cv::_OutputArray const &,class cv::_InputArray const &)const " (?copyTo@Mat@cv@@QEBAXAEBV_OutputArray@2@AEBV_InputArray@2@@Z) referenced in function "public: class cv::Mat __cdecl CVSLSegmentation::handFilter(class cv::Mat,class cv::Rect_<int>,struct _IplImage *)" (?handFilter@CVSLSegmentation@@QEAA?AVMat@cv@@V23@V?$Rect_@H@3@PEAU_IplImage@@@Z)
+     1>VSLSegmentation.obj : error LNK2019: unresolved external symbol "public: class cv::Mat & __cdecl cv::Mat::operator=(class cv::Scalar_<double> const &)" (??4Mat@cv@@QEAAAEAV01@AEBV?$Scalar_@N@1@@Z) referenced in function "public: __cdecl cv::Mat::Mat(int,int,int,class cv::Scalar_<double> const &)" (??0Mat@cv@@QEAA@HHHAEBV?$Scalar_@N@1@@Z)
+     1>VSLSegmentation.obj : error LNK2019: unresolved external symbol "public: void __cdecl cv::Mat::create(int,int const *,int)" (?create@Mat@cv@@QEAAXHPEBHH@Z) referenced in function "public: void __cdecl cv::Mat::create(int,int,int)" (?create@Mat@cv@@QEAAXHHH@Z)
+     1>VSLSegmentation.obj : error LNK2019: unresolved external symbol "public: __cdecl cv::Mat::operator struct _IplImage(void)const " (??BMat@cv@@QEBA?AU_IplImage@@XZ) referenced in function "public: void __cdecl CVSLSegmentation::cleanMask(class cv::Mat)" (?cleanMask@CVSLSegmentation@@QEAAXVMat@cv@@@Z)
+     1>VSLSegmentation.obj : error LNK2019: unresolved external symbol "class cv::MatExpr __cdecl cv::operator<(class cv::Mat const &,double)" (??Mcv@@YA?AVMatExpr@0@AEBVMat@0@N@Z) referenced in function "public: class cv::Mat __cdecl CVSLSegmentation::handFilter(class cv::Mat,class cv::Rect_<int>,struct _IplImage *)" (?handFilter@CVSLSegmentation@@QEAA?AVMat@cv@@V23@V?$Rect_@H@3@PEAU_IplImage@@@Z)
+     1>VSLSegmentation.obj : error LNK2019: unresolved external symbol cvCreateStructuringElementEx referenced in function "public: void __cdecl CVSLSegmentation::cleanMask(class cv::Mat)" (?cleanMask@CVSLSegmentation@@QEAAXVMat@cv@@@Z)
+     1>VSLSegmentation.obj : error LNK2019: unresolved external symbol cvReleaseStructuringElement referenced in function "public: __cdecl CVSLSegmentation::~CVSLSegmentation(void)" (??1CVSLSegmentation@@QEAA@XZ)
+     1>VSLSegmentation.obj : error LNK2019: unresolved external symbol cvMorphologyEx referenced in function "public: void __cdecl CVSLSegmentation::cleanMask(class cv::Mat)" (?cleanMask@CVSLSegmentation@@QEAAXVMat@cv@@@Z)
+     1>VSLSegmentation.obj : error LNK2019: unresolved external symbol "void __cdecl cv::findContours(class cv::_OutputArray const &,class cv::_OutputArray const &,int,int,class cv::Point_<int>)" (?findContours@cv@@YAXAEBV_OutputArray@1@0HHV?$Point_@H@1@@Z) referenced in function "public: class cv::Mat __cdecl CVSLSegmentation::handFilter(class cv::Mat,class cv::Rect_<int>,struct _IplImage *)" (?handFilter@CVSLSegmentation@@QEAA?AVMat@cv@@V23@V?$Rect_@H@3@PEAU_IplImage@@@Z)
+     1>VSLSegmentation.obj : error LNK2019: unresolved external symbol "class cv::Rect_<int> __cdecl cv::boundingRect(class cv::_InputArray const &)" (?boundingRect@cv@@YA?AV?$Rect_@H@1@AEBV_InputArray@1@@Z) referenced in function "public: class cv::Mat __cdecl CVSLSegmentation::handFilter(class cv::Mat,class cv::Rect_<int>,struct _IplImage *)" (?handFilter@CVSLSegmentation@@QEAA?AVMat@cv@@V23@V?$Rect_@H@3@PEAU_IplImage@@@Z)
+     1>VSLStreamRender.obj : error LNK2019: unresolved external symbol cvCreateImage referenced in function "class cv::Mat __cdecl HandMask(class UtilPipeline *,struct CvRect,struct CvRect,struct PXCPoint3DF32 *,struct PXCPointF32 *,class PXCProjection *)" (?HandMask@@YA?AVMat@cv@@PEAVUtilPipeline@@UCvRect@@1PEAUPXCPoint3DF32@@PEAUPXCPointF32@@PEAVPXCProjection@@@Z)
+     1>VSLStreamRender.obj : error LNK2019: unresolved external symbol cvSetData referenced in function "struct _IplImage * __cdecl QueryDepthImage(class UtilPipeline *)" (?QueryDepthImage@@YAPEAU_IplImage@@PEAVUtilPipeline@@@Z)
+     1>VSLStreamRender.obj : error LNK2019: unresolved external symbol cvSet referenced in function "class cv::Mat __cdecl HandMask(class UtilPipeline *,struct CvRect,struct CvRect,struct PXCPoint3DF32 *,struct PXCPointF32 *,class PXCProjection *)" (?HandMask@@YA?AVMat@cv@@PEAVUtilPipeline@@UCvRect@@1PEAUPXCPoint3DF32@@PEAUPXCPointF32@@PEAVPXCProjection@@@Z)
+     1>VSLStreamRender.obj : error LNK2019: unresolved external symbol cvCircle referenced in function "void __cdecl DrawGeoNode(class UtilPipeline *,struct _IplImage *,class PXCGesture *,int)" (?DrawGeoNode@@YAXPEAVUtilPipeline@@PEAU_IplImage@@PEAVPXCGesture@@H@Z)
+     1>VSLStreamRender.obj : error LNK2019: unresolved external symbol cvGetTickFrequency referenced in function "int __cdecl FPS(double &,int &,int &)" (?FPS@@YAHAEANAEAH1@Z)
+     1>D:\Study hub\Projects\Sign Language\VSL Reader\VSL Reader\x64\Debug\VSL Reader.exe : fatal error LNK1120: 113 unresolved externals
+     1>Done Building Project "D:\Study hub\Projects\Sign Language\VSL Reader\VSL Reader\VSL Reader\VSL Reader.vcxproj" (Build target(s)) -- FAILED.
+
+Build FAILED.
+
+Time Elapsed 00:00:34.38

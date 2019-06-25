@@ -1,0 +1,286 @@
+﻿Build started 1/17/2014 9:36:06 AM.
+     1>Project "D:\Study hub\Projects\Sign Language\VSL Reader\VSL Reader\VSL Reader\VSL Reader.vcxproj" on node 2 (Build target(s)).
+     1>ClCompile:
+         C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\bin\x86_amd64\CL.exe /c /Zi /nologo /W3 /WX- /sdl /O2 /Oi /GL /D WIN32 /D _WINDOWS /D NDEBUG /D _UNICODE /D UNICODE /Gm- /EHsc /MT /GS /Gy /fp:precise /Zc:wchar_t /Zc:forScope /Yu"stdafx.h" /Fp"x64\Release\VSL Reader.pch" /Fo"x64\Release\\" /Fd"x64\Release\vc110.pdb" /Gd /TP /errorReport:prompt Gabor.cpp SubFunctions.cpp "VSL Reader.cpp" "VSL ReaderDlg.cpp" VSLFDA.cpp VSLHandFeature.cpp VSLHandFunctions.cpp VSLHandSpace.cpp VSLSegmentation.cpp VSLStreamRender.cpp
+         Gabor.cpp
+     1>c:\opencv2.4.8\build\include\opencv2\flann\logger.h(66): error C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\include\stdio.h(218) : see declaration of 'fopen'
+     1>C:\OpenCV2.4.8\build\include\opencv2/legacy/blobtrack.hpp(187): error C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\include\string.h(110) : see declaration of 'strcpy'
+     1>C:\OpenCV2.4.8\build\include\opencv2/legacy/blobtrack.hpp(256): error C4996: 'strcat': This function or variable may be unsafe. Consider using strcat_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\include\string.h(115) : see declaration of 'strcat'
+         SubFunctions.cpp
+     1>c:\opencv2.4.8\build\include\opencv2\flann\logger.h(66): error C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\include\stdio.h(218) : see declaration of 'fopen'
+     1>C:\OpenCV2.4.8\build\include\opencv2/legacy/blobtrack.hpp(187): error C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\include\string.h(110) : see declaration of 'strcpy'
+     1>C:\OpenCV2.4.8\build\include\opencv2/legacy/blobtrack.hpp(256): error C4996: 'strcat': This function or variable may be unsafe. Consider using strcat_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\include\string.h(115) : see declaration of 'strcat'
+     1>d:\study hub\projects\sign language\vsl reader\vsl reader\vsl reader\SubFunctions.h(9): error C2440: 'default argument' : cannot convert from 'const char [8]' to 'LPCTSTR'
+                 Types pointed to are unrelated; conversion requires reinterpret_cast, C-style cast or function-style cast
+     1>d:\study hub\projects\sign language\vsl reader\vsl reader\vsl reader\SubFunctions.h(9): error C2548: 'MessageBox1' : missing default parameter for parameter 3
+     1>d:\study hub\projects\sign language\vsl reader\vsl reader\vsl reader\SubFunctions.h(13): error C2440: 'default argument' : cannot convert from 'const char [6]' to 'TCHAR *'
+                 Types pointed to are unrelated; conversion requires reinterpret_cast, C-style cast or function-style cast
+     1>d:\study hub\projects\sign language\vsl reader\vsl reader\vsl reader\SubFunctions.h(13): error C2548: 'DispCvArr' : missing default parameter for parameter 2
+     1>SubFunctions.cpp(7): error C2664: 'cvDestroyWindow' : cannot convert parameter 1 from 'CString' to 'const char *'
+                 No user-defined-conversion operator available that can perform this conversion, or the operator cannot be called
+     1>SubFunctions.cpp(8): error C2664: 'cvNamedWindow' : cannot convert parameter 1 from 'CString' to 'const char *'
+                 No user-defined-conversion operator available that can perform this conversion, or the operator cannot be called
+     1>SubFunctions.cpp(9): error C2664: 'cvGetWindowHandle' : cannot convert parameter 1 from 'CString' to 'const char *'
+                 No user-defined-conversion operator available that can perform this conversion, or the operator cannot be called
+     1>SubFunctions.cpp(14): error C2664: 'cvResizeWindow' : cannot convert parameter 1 from 'CString' to 'const char *'
+                 No user-defined-conversion operator available that can perform this conversion, or the operator cannot be called
+     1>SubFunctions.cpp(43): error C2440: '=' : cannot convert from 'char [260]' to 'LPWSTR'
+                 Types pointed to are unrelated; conversion requires reinterpret_cast, C-style cast or function-style cast
+     1>SubFunctions.cpp(50): warning C4090: 'initializing' : different '__unaligned' qualifiers
+     1>SubFunctions.cpp(54): error C2664: 'SHGetPathFromIDListW' : cannot convert parameter 2 from 'char [260]' to 'LPWSTR'
+                 Types pointed to are unrelated; conversion requires reinterpret_cast, C-style cast or function-style cast
+     1>SubFunctions.cpp(84): error C2664: 'void ATL::CStringT<BaseType,StringTraits>::Format(const wchar_t *,...)' : cannot convert parameter 1 from 'const char [17]' to 'const wchar_t *'
+                 with
+                 [
+                     BaseType=wchar_t,
+                     StringTraits=StrTraitMFC<wchar_t>
+                 ]
+                 Types pointed to are unrelated; conversion requires reinterpret_cast, C-style cast or function-style cast
+     1>SubFunctions.cpp(85): error C2664: 'void ATL::CStringT<BaseType,StringTraits>::Format(const wchar_t *,...)' : cannot convert parameter 1 from 'const char [14]' to 'const wchar_t *'
+                 with
+                 [
+                     BaseType=wchar_t,
+                     StringTraits=StrTraitMFC<wchar_t>
+                 ]
+                 Types pointed to are unrelated; conversion requires reinterpret_cast, C-style cast or function-style cast
+     1>SubFunctions.cpp(87): error C2440: 'initializing' : cannot convert from 'const char [4]' to 'TCHAR *'
+                 Types pointed to are unrelated; conversion requires reinterpret_cast, C-style cast or function-style cast
+         VSL Reader.cpp
+     1>c:\opencv2.4.8\build\include\opencv2\flann\logger.h(66): error C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\include\stdio.h(218) : see declaration of 'fopen'
+     1>C:\OpenCV2.4.8\build\include\opencv2/legacy/blobtrack.hpp(187): error C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\include\string.h(110) : see declaration of 'strcpy'
+     1>C:\OpenCV2.4.8\build\include\opencv2/legacy/blobtrack.hpp(256): error C4996: 'strcat': This function or variable may be unsafe. Consider using strcat_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\include\string.h(115) : see declaration of 'strcat'
+     1>d:\study hub\projects\sign language\vsl reader\vsl reader\vsl reader\SubFunctions.h(9): error C2440: 'default argument' : cannot convert from 'const char [8]' to 'LPCTSTR'
+                 Types pointed to are unrelated; conversion requires reinterpret_cast, C-style cast or function-style cast
+     1>d:\study hub\projects\sign language\vsl reader\vsl reader\vsl reader\SubFunctions.h(9): error C2548: 'MessageBox1' : missing default parameter for parameter 3
+     1>d:\study hub\projects\sign language\vsl reader\vsl reader\vsl reader\SubFunctions.h(13): error C2440: 'default argument' : cannot convert from 'const char [6]' to 'TCHAR *'
+                 Types pointed to are unrelated; conversion requires reinterpret_cast, C-style cast or function-style cast
+     1>d:\study hub\projects\sign language\vsl reader\vsl reader\vsl reader\SubFunctions.h(13): error C2548: 'DispCvArr' : missing default parameter for parameter 2
+         VSL ReaderDlg.cpp
+     1>c:\opencv2.4.8\build\include\opencv2\flann\logger.h(66): error C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\include\stdio.h(218) : see declaration of 'fopen'
+     1>C:\OpenCV2.4.8\build\include\opencv2/legacy/blobtrack.hpp(187): error C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\include\string.h(110) : see declaration of 'strcpy'
+     1>C:\OpenCV2.4.8\build\include\opencv2/legacy/blobtrack.hpp(256): error C4996: 'strcat': This function or variable may be unsafe. Consider using strcat_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\include\string.h(115) : see declaration of 'strcat'
+     1>d:\study hub\projects\sign language\vsl reader\vsl reader\vsl reader\SubFunctions.h(9): error C2440: 'default argument' : cannot convert from 'const char [8]' to 'LPCTSTR'
+                 Types pointed to are unrelated; conversion requires reinterpret_cast, C-style cast or function-style cast
+     1>d:\study hub\projects\sign language\vsl reader\vsl reader\vsl reader\SubFunctions.h(9): error C2548: 'MessageBox1' : missing default parameter for parameter 3
+     1>d:\study hub\projects\sign language\vsl reader\vsl reader\vsl reader\SubFunctions.h(13): error C2440: 'default argument' : cannot convert from 'const char [6]' to 'TCHAR *'
+                 Types pointed to are unrelated; conversion requires reinterpret_cast, C-style cast or function-style cast
+     1>d:\study hub\projects\sign language\vsl reader\vsl reader\vsl reader\SubFunctions.h(13): error C2548: 'DispCvArr' : missing default parameter for parameter 2
+     1>VSL ReaderDlg.cpp(94): error C2664: 'CHandFunctions::LoadDatabase' : cannot convert parameter 1 from 'const char [22]' to 'CString'
+                 Constructor for class 'ATL::CStringT<BaseType,StringTraits>' is declared 'explicit'
+                 with
+                 [
+                     BaseType=wchar_t,
+                     StringTraits=StrTraitMFC<wchar_t>
+                 ]
+     1>VSL ReaderDlg.cpp(114): error C2664: 'EmbedCvWindow' : cannot convert parameter 2 from 'const char [7]' to 'CString'
+                 Constructor for class 'ATL::CStringT<BaseType,StringTraits>' is declared 'explicit'
+                 with
+                 [
+                     BaseType=wchar_t,
+                     StringTraits=StrTraitMFC<wchar_t>
+                 ]
+     1>VSL ReaderDlg.cpp(117): error C2664: 'EmbedCvWindow' : cannot convert parameter 2 from 'const char [18]' to 'CString'
+                 Constructor for class 'ATL::CStringT<BaseType,StringTraits>' is declared 'explicit'
+                 with
+                 [
+                     BaseType=wchar_t,
+                     StringTraits=StrTraitMFC<wchar_t>
+                 ]
+     1>VSL ReaderDlg.cpp(190): error C2664: 'cvPutText' : cannot convert parameter 2 from 'CString' to 'const char *'
+                 No user-defined-conversion operator available that can perform this conversion, or the operator cannot be called
+     1>VSL ReaderDlg.cpp(217): error C2664: 'void ATL::CStringT<BaseType,StringTraits>::Format(const wchar_t *,...)' : cannot convert parameter 1 from 'const char [3]' to 'const wchar_t *'
+                 with
+                 [
+                     BaseType=wchar_t,
+                     StringTraits=StrTraitMFC<wchar_t>
+                 ]
+                 Types pointed to are unrelated; conversion requires reinterpret_cast, C-style cast or function-style cast
+     1>VSL ReaderDlg.cpp(244): error C2664: 'void ATL::CStringT<BaseType,StringTraits>::Format(const wchar_t *,...)' : cannot convert parameter 1 from 'const char [3]' to 'const wchar_t *'
+                 with
+                 [
+                     BaseType=wchar_t,
+                     StringTraits=StrTraitMFC<wchar_t>
+                 ]
+                 Types pointed to are unrelated; conversion requires reinterpret_cast, C-style cast or function-style cast
+         VSLFDA.cpp
+     1>c:\opencv2.4.8\build\include\opencv2\flann\logger.h(66): error C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\include\stdio.h(218) : see declaration of 'fopen'
+     1>C:\OpenCV2.4.8\build\include\opencv2/legacy/blobtrack.hpp(187): error C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\include\string.h(110) : see declaration of 'strcpy'
+     1>C:\OpenCV2.4.8\build\include\opencv2/legacy/blobtrack.hpp(256): error C4996: 'strcat': This function or variable may be unsafe. Consider using strcat_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\include\string.h(115) : see declaration of 'strcat'
+         VSLHandFeature.cpp
+     1>c:\opencv2.4.8\build\include\opencv2\flann\logger.h(66): error C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\include\stdio.h(218) : see declaration of 'fopen'
+     1>C:\OpenCV2.4.8\build\include\opencv2/legacy/blobtrack.hpp(187): error C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\include\string.h(110) : see declaration of 'strcpy'
+     1>C:\OpenCV2.4.8\build\include\opencv2/legacy/blobtrack.hpp(256): error C4996: 'strcat': This function or variable may be unsafe. Consider using strcat_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\include\string.h(115) : see declaration of 'strcat'
+     1>d:\study hub\projects\sign language\vsl reader\vsl reader\vsl reader\SubFunctions.h(9): error C2440: 'default argument' : cannot convert from 'const char [8]' to 'LPCTSTR'
+                 Types pointed to are unrelated; conversion requires reinterpret_cast, C-style cast or function-style cast
+     1>d:\study hub\projects\sign language\vsl reader\vsl reader\vsl reader\SubFunctions.h(9): error C2548: 'MessageBox1' : missing default parameter for parameter 3
+     1>d:\study hub\projects\sign language\vsl reader\vsl reader\vsl reader\SubFunctions.h(13): error C2440: 'default argument' : cannot convert from 'const char [6]' to 'TCHAR *'
+                 Types pointed to are unrelated; conversion requires reinterpret_cast, C-style cast or function-style cast
+     1>d:\study hub\projects\sign language\vsl reader\vsl reader\vsl reader\SubFunctions.h(13): error C2548: 'DispCvArr' : missing default parameter for parameter 2
+         VSLHandFunctions.cpp
+     1>c:\opencv2.4.8\build\include\opencv2\flann\logger.h(66): error C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\include\stdio.h(218) : see declaration of 'fopen'
+     1>C:\OpenCV2.4.8\build\include\opencv2/legacy/blobtrack.hpp(187): error C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\include\string.h(110) : see declaration of 'strcpy'
+     1>C:\OpenCV2.4.8\build\include\opencv2/legacy/blobtrack.hpp(256): error C4996: 'strcat': This function or variable may be unsafe. Consider using strcat_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\include\string.h(115) : see declaration of 'strcat'
+     1>d:\study hub\projects\sign language\vsl reader\vsl reader\vsl reader\SubFunctions.h(9): error C2440: 'default argument' : cannot convert from 'const char [8]' to 'LPCTSTR'
+                 Types pointed to are unrelated; conversion requires reinterpret_cast, C-style cast or function-style cast
+     1>d:\study hub\projects\sign language\vsl reader\vsl reader\vsl reader\SubFunctions.h(9): error C2548: 'MessageBox1' : missing default parameter for parameter 3
+     1>d:\study hub\projects\sign language\vsl reader\vsl reader\vsl reader\SubFunctions.h(13): error C2440: 'default argument' : cannot convert from 'const char [6]' to 'TCHAR *'
+                 Types pointed to are unrelated; conversion requires reinterpret_cast, C-style cast or function-style cast
+     1>d:\study hub\projects\sign language\vsl reader\vsl reader\vsl reader\SubFunctions.h(13): error C2548: 'DispCvArr' : missing default parameter for parameter 2
+     1>VSLHandFunctions.cpp(84): error C2664: 'cvLoadImageM' : cannot convert parameter 1 from 'CString' to 'const char *'
+                 No user-defined-conversion operator available that can perform this conversion, or the operator cannot be called
+     1>VSLHandFunctions.cpp(104): warning C4267: '=' : conversion from 'size_t' to 'int', possible loss of data
+     1>VSLHandFunctions.cpp(140): error C2664: 'atoi' : cannot convert parameter 1 from 'CString' to 'const char *'
+                 No user-defined-conversion operator available that can perform this conversion, or the operator cannot be called
+     1>VSLHandFunctions.cpp(147): error C2664: 'atoi' : cannot convert parameter 1 from 'CString' to 'const char *'
+                 No user-defined-conversion operator available that can perform this conversion, or the operator cannot be called
+     1>VSLHandFunctions.cpp(181): error C2664: 'void ATL::CStringT<BaseType,StringTraits>::Format(const wchar_t *,...)' : cannot convert parameter 1 from 'const char [6]' to 'const wchar_t *'
+                 with
+                 [
+                     BaseType=wchar_t,
+                     StringTraits=StrTraitMFC<wchar_t>
+                 ]
+                 Types pointed to are unrelated; conversion requires reinterpret_cast, C-style cast or function-style cast
+     1>VSLHandFunctions.cpp(182): error C2664: 'void ATL::CStringT<BaseType,StringTraits>::Format(const wchar_t *,...)' : cannot convert parameter 1 from 'const char [8]' to 'const wchar_t *'
+                 with
+                 [
+                     BaseType=wchar_t,
+                     StringTraits=StrTraitMFC<wchar_t>
+                 ]
+                 Types pointed to are unrelated; conversion requires reinterpret_cast, C-style cast or function-style cast
+     1>VSLHandFunctions.cpp(183): error C2664: 'void ATL::CStringT<BaseType,StringTraits>::Format(const wchar_t *,...)' : cannot convert parameter 1 from 'const char [8]' to 'const wchar_t *'
+                 with
+                 [
+                     BaseType=wchar_t,
+                     StringTraits=StrTraitMFC<wchar_t>
+                 ]
+                 Types pointed to are unrelated; conversion requires reinterpret_cast, C-style cast or function-style cast
+     1>VSLHandFunctions.cpp(184): error C2664: 'void ATL::CStringT<BaseType,StringTraits>::Format(const wchar_t *,...)' : cannot convert parameter 1 from 'const char [15]' to 'const wchar_t *'
+                 with
+                 [
+                     BaseType=wchar_t,
+                     StringTraits=StrTraitMFC<wchar_t>
+                 ]
+                 Types pointed to are unrelated; conversion requires reinterpret_cast, C-style cast or function-style cast
+     1>VSLHandFunctions.cpp(186): error C2664: 'cvWriteString' : cannot convert parameter 2 from 'CString' to 'const char *'
+                 No user-defined-conversion operator available that can perform this conversion, or the operator cannot be called
+     1>VSLHandFunctions.cpp(187): error C2664: 'cvWriteString' : cannot convert parameter 2 from 'CString' to 'const char *'
+                 No user-defined-conversion operator available that can perform this conversion, or the operator cannot be called
+     1>VSLHandFunctions.cpp(188): error C2664: 'cvWriteString' : cannot convert parameter 2 from 'CString' to 'const char *'
+                 No user-defined-conversion operator available that can perform this conversion, or the operator cannot be called
+     1>VSLHandFunctions.cpp(189): error C2664: 'cvWrite' : cannot convert parameter 2 from 'CString' to 'const char *'
+                 No user-defined-conversion operator available that can perform this conversion, or the operator cannot be called
+     1>VSLHandFunctions.cpp(200): error C2440: 'initializing' : cannot convert from 'const char [4]' to 'ATL::CStringT<BaseType,StringTraits>'
+                 with
+                 [
+                     BaseType=wchar_t,
+                     StringTraits=StrTraitMFC<wchar_t>
+                 ]
+                 Constructor for class 'ATL::CStringT<BaseType,StringTraits>' is declared 'explicit'
+                 with
+                 [
+                     BaseType=wchar_t,
+                     StringTraits=StrTraitMFC<wchar_t>
+                 ]
+     1>VSLHandFunctions.cpp(202): error C2664: 'cvOpenFileStorage' : cannot convert parameter 1 from 'CString' to 'const char *'
+                 No user-defined-conversion operator available that can perform this conversion, or the operator cannot be called
+     1>VSLHandFunctions.cpp(212): error C2664: 'void ATL::CStringT<BaseType,StringTraits>::Format(const wchar_t *,...)' : cannot convert parameter 1 from 'const char [6]' to 'const wchar_t *'
+                 with
+                 [
+                     BaseType=wchar_t,
+                     StringTraits=StrTraitMFC<wchar_t>
+                 ]
+                 Types pointed to are unrelated; conversion requires reinterpret_cast, C-style cast or function-style cast
+     1>VSLHandFunctions.cpp(213): error C2664: 'void ATL::CStringT<BaseType,StringTraits>::Format(const wchar_t *,...)' : cannot convert parameter 1 from 'const char [8]' to 'const wchar_t *'
+                 with
+                 [
+                     BaseType=wchar_t,
+                     StringTraits=StrTraitMFC<wchar_t>
+                 ]
+                 Types pointed to are unrelated; conversion requires reinterpret_cast, C-style cast or function-style cast
+     1>VSLHandFunctions.cpp(214): error C2664: 'void ATL::CStringT<BaseType,StringTraits>::Format(const wchar_t *,...)' : cannot convert parameter 1 from 'const char [8]' to 'const wchar_t *'
+                 with
+                 [
+                     BaseType=wchar_t,
+                     StringTraits=StrTraitMFC<wchar_t>
+                 ]
+                 Types pointed to are unrelated; conversion requires reinterpret_cast, C-style cast or function-style cast
+     1>VSLHandFunctions.cpp(215): error C2664: 'void ATL::CStringT<BaseType,StringTraits>::Format(const wchar_t *,...)' : cannot convert parameter 1 from 'const char [15]' to 'const wchar_t *'
+                 with
+                 [
+                     BaseType=wchar_t,
+                     StringTraits=StrTraitMFC<wchar_t>
+                 ]
+                 Types pointed to are unrelated; conversion requires reinterpret_cast, C-style cast or function-style cast
+     1>VSLHandFunctions.cpp(217): error C2664: 'cvReadStringByName' : cannot convert parameter 3 from 'CString' to 'const char *'
+                 No user-defined-conversion operator available that can perform this conversion, or the operator cannot be called
+     1>VSLHandFunctions.cpp(218): error C2664: 'cvReadStringByName' : cannot convert parameter 3 from 'CString' to 'const char *'
+                 No user-defined-conversion operator available that can perform this conversion, or the operator cannot be called
+     1>VSLHandFunctions.cpp(219): error C2664: 'cvReadStringByName' : cannot convert parameter 3 from 'CString' to 'const char *'
+                 No user-defined-conversion operator available that can perform this conversion, or the operator cannot be called
+     1>VSLHandFunctions.cpp(220): error C2664: 'cvReadByName' : cannot convert parameter 3 from 'CString' to 'const char *'
+                 No user-defined-conversion operator available that can perform this conversion, or the operator cannot be called
+     1>VSLHandFunctions.cpp(222): error C2664: 'cvReadStringByName' : cannot convert parameter 3 from 'CString' to 'const char *'
+                 No user-defined-conversion operator available that can perform this conversion, or the operator cannot be called
+     1>VSLHandFunctions.cpp(226): error C2664: 'atoi' : cannot convert parameter 1 from 'CString' to 'const char *'
+                 No user-defined-conversion operator available that can perform this conversion, or the operator cannot be called
+     1>VSLHandFunctions.cpp(226): error C2664: 'cvReadStringByName' : cannot convert parameter 3 from 'CString' to 'const char *'
+                 No user-defined-conversion operator available that can perform this conversion, or the operator cannot be called
+     1>VSLHandFunctions.cpp(264): error C2664: 'atoi' : cannot convert parameter 1 from 'CString' to 'const char *'
+                 No user-defined-conversion operator available that can perform this conversion, or the operator cannot be called
+         VSLHandSpace.cpp
+     1>c:\opencv2.4.8\build\include\opencv2\flann\logger.h(66): error C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\include\stdio.h(218) : see declaration of 'fopen'
+     1>C:\OpenCV2.4.8\build\include\opencv2/legacy/blobtrack.hpp(187): error C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\include\string.h(110) : see declaration of 'strcpy'
+     1>C:\OpenCV2.4.8\build\include\opencv2/legacy/blobtrack.hpp(256): error C4996: 'strcat': This function or variable may be unsafe. Consider using strcat_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\include\string.h(115) : see declaration of 'strcat'
+     1>d:\study hub\projects\sign language\vsl reader\vsl reader\vsl reader\SubFunctions.h(9): error C2440: 'default argument' : cannot convert from 'const char [8]' to 'LPCTSTR'
+                 Types pointed to are unrelated; conversion requires reinterpret_cast, C-style cast or function-style cast
+     1>d:\study hub\projects\sign language\vsl reader\vsl reader\vsl reader\SubFunctions.h(9): error C2548: 'MessageBox1' : missing default parameter for parameter 3
+     1>d:\study hub\projects\sign language\vsl reader\vsl reader\vsl reader\SubFunctions.h(13): error C2440: 'default argument' : cannot convert from 'const char [6]' to 'TCHAR *'
+                 Types pointed to are unrelated; conversion requires reinterpret_cast, C-style cast or function-style cast
+     1>d:\study hub\projects\sign language\vsl reader\vsl reader\vsl reader\SubFunctions.h(13): error C2548: 'DispCvArr' : missing default parameter for parameter 2
+     1>VSLHandSpace.cpp(49): error C2664: 'cvOpenFileStorage' : cannot convert parameter 1 from 'CString' to 'const char *'
+                 No user-defined-conversion operator available that can perform this conversion, or the operator cannot be called
+         VSLSegmentation.cpp
+     1>c:\opencv2.4.8\build\include\opencv2\flann\logger.h(66): error C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\include\stdio.h(218) : see declaration of 'fopen'
+     1>C:\OpenCV2.4.8\build\include\opencv2/legacy/blobtrack.hpp(187): error C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\include\string.h(110) : see declaration of 'strcpy'
+     1>C:\OpenCV2.4.8\build\include\opencv2/legacy/blobtrack.hpp(256): error C4996: 'strcat': This function or variable may be unsafe. Consider using strcat_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\include\string.h(115) : see declaration of 'strcat'
+         VSLStreamRender.cpp
+     1>c:\opencv2.4.8\build\include\opencv2\flann\logger.h(66): error C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\include\stdio.h(218) : see declaration of 'fopen'
+     1>C:\OpenCV2.4.8\build\include\opencv2/legacy/blobtrack.hpp(187): error C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\include\string.h(110) : see declaration of 'strcpy'
+     1>C:\OpenCV2.4.8\build\include\opencv2/legacy/blobtrack.hpp(256): error C4996: 'strcat': This function or variable may be unsafe. Consider using strcat_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\include\string.h(115) : see declaration of 'strcat'
+     1>VSLStreamRender.cpp(247): warning C4244: 'argument' : conversion from 'pxcF32' to 'int', possible loss of data
+     1>VSLStreamRender.cpp(251): warning C4244: 'argument' : conversion from 'pxcF32' to 'int', possible loss of data
+     1>Done Building Project "D:\Study hub\Projects\Sign Language\VSL Reader\VSL Reader\VSL Reader\VSL Reader.vcxproj" (Build target(s)) -- FAILED.
+
+Build FAILED.
+
+Time Elapsed 00:00:14.50
