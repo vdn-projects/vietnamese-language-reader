@@ -10,6 +10,9 @@
 #define new DEBUG_NEW
 #endif
 
+
+vector<CvPoint> tipPointArr; //for drawing
+vector<CvPoint> tipPointArr_R; //for recognizing
 int g_totalMS, g_frameCnt;
 double g_time;
 
@@ -21,6 +24,7 @@ CVSLReaderDlg::CVSLReaderDlg(CWnd* pParent /*=NULL*/)
 	, m_strFPS(_T(""))
 	, m_textTemp(_T(""))
 	, m_timeStamp(_T(""))
+	, m_pointEnd(false)
 {
 	m_hIcon = AfxGetApp()->LoadIcon(IDR_MAINFRAME);
 	m_nohandImg = cvLoadImage("Nohand.jpg");
@@ -32,6 +36,8 @@ void CVSLReaderDlg::DoDataExchange(CDataExchange* pDX)
 	DDX_Text(pDX, IDC_EDIT_OUT_TEXT, m_strTextOut);
 	DDX_Text(pDX, IDC_FPS, m_strFPS);
 	DDX_Text(pDX, IDC_TIMESTAMP, m_timeStamp);
+	DDX_Control(pDX, IDC_MODE, m_cboMode);
+	DDX_Control(pDX, IDC_COMBO_MODE2, m_cbMode2);
 }
 
 BEGIN_MESSAGE_MAP(CVSLReaderDlg, CDialogEx)
@@ -48,7 +54,7 @@ END_MESSAGE_MAP()
 BOOL CVSLReaderDlg::OnInitDialog()
 {
 	CDialogEx::OnInitDialog();
-
+	InitComboBox();
 
 	// Set the icon for this dialog.  The framework does this automatically
 	//  when the application's main window is not a dialog
@@ -86,6 +92,8 @@ BOOL CVSLReaderDlg::OnInitDialog()
 	g_frameCnt = 0;
 	g_time = 0;
 	
+	m_dynamicG.loadTemplates(); //load dynamic gesture database
+
 	InitSenz3D(m_pp);
 	m_hand = new CHandFunctions;
 	m_hand->InitHandFunction();
@@ -119,8 +127,22 @@ BOOL CVSLReaderDlg::OnInitDialog()
 
 	m_bthrdStart = TRUE;
 	m_thrdVSL = ::AfxBeginThread(RunDialog, this);
-
+	
 	return TRUE;  // return TRUE  unless you set the focus to a control
+}
+
+void CVSLReaderDlg::InitComboBox()
+{
+	m_cboMode.ResetContent();
+	m_cboMode.InsertString(0, "Single mode 1");
+	m_cboMode.InsertString(1, "Single mode 2");
+	m_cboMode.InsertString(2, "Combination mode");
+	m_cboMode.SetCurSel(1);
+
+	m_cbMode2.ResetContent();
+	m_cbMode2.InsertString(0, "Recognize");
+	m_cbMode2.InsertString(1, "Train");
+	m_cbMode2.SetCurSel(0);
 }
 
 void CVSLReaderDlg::OnSysCommand(UINT nID, LPARAM lParam)
@@ -174,51 +196,106 @@ UINT CVSLReaderDlg::VSLDisplay(){
 
 	while(m_bthrdStart)
 	{
-		g_time = (double)cvGetTickCount();
-		FrameStart(m_pp);
-		m_gesture = m_pp->QueryGesture();
-		m_colorImg = QueryColorImage(m_pp);
 
-		CvRect p1 = {-1}, p2 = {-1}, p3= {-1};
+		if(m_cboMode.GetCurSel() == 0){
+			g_time = (double)cvGetTickCount();
+			FrameStart(m_pp);
+			m_gesture = m_pp->QueryGesture();
+			m_colorImg = QueryColorImage(m_pp);
 
-		if(m_binitFlag){
-			m_ihRadius = big5signal(m_pp, m_gesture, p2);
-			if(m_ihRadius){
-				m_binitFlag = FALSE;
+			CvRect p1 = {-1}, p2 = {-1}, p3= {-1};
+
+			if(m_binitFlag){
+				m_ihRadius = big5signal(m_pp, m_gesture, p2);
+				if(m_ihRadius){
+					m_binitFlag = FALSE;
+				}
+			} else	p1 = GetHandRegion(m_pp, m_gesture, m_pos2d, m_posc, m_projection, m_ihRadius, p3, m_strStt);
+			cvPutText(m_colorImg, m_strStt, cvPoint(10, 40), &m_cvFont, cvScalar(0, 0, 180));
+
+
+			if(p1.x!=-1) {
+				Mat MaskImg = HandMask(m_pp, p3, p1, m_pos2d, m_posc, m_projection);
+				m_handSeg.cleanMask(MaskImg);
+				Mat handMat = m_handSeg.handFilter(MaskImg, p1, m_colorImg);
+				if(handMat.data) {
+					imshow("Hand Segmentation", handMat);
+					m_hand->HandRecognization(handMat, &hInfo);
+					CString textOut;
+					TextTimeStamp(hInfo.name, textOut, 12);
+					m_strTextOut += textOut;
+
+					SetDlgItemText(IDC_EDIT_OUT_TEXT, m_strTextOut);
+				} else cvShowImage("Hand Segmentation", m_nohandImg);
+
+				cvRectangle(m_colorImg, cvPoint(p1.x, p1.y), cvPoint(p1.x+p1.width, p1.y+p1.height), cvScalar(255,0,0), 2);
+			}else {
+				m_strStt = "";	
+				cvShowImage("Hand Segmentation", m_nohandImg);
 			}
-		} else	p1 = GetHandRegion(m_pp, m_gesture, m_pos2d, m_posc, m_projection, m_ihRadius, p3, m_strStt);
-		cvPutText(m_colorImg, m_strStt, cvPoint(10, 40), &m_cvFont, cvScalar(0, 0, 180));
 
-
-		if(p1.x!=-1) {
-			Mat MaskImg = HandMask(m_pp, p3, p1, m_pos2d, m_posc, m_projection);
-			m_handSeg.cleanMask(MaskImg);
-			Mat handMat = m_handSeg.handFilter(MaskImg, p1, m_colorImg);
-			if(handMat.data) {
-				imshow("Hand Segmentation", handMat);
-				m_hand->HandRecognization(handMat, &hInfo);
-				CString textOut;
-				TextTimeStamp(hInfo.name, textOut, 12);
-				m_strTextOut += textOut;
-
-				SetDlgItemText(IDC_EDIT_OUT_TEXT, m_strTextOut);
-			} else cvShowImage("Hand Segmentation", m_nohandImg);
-
-			cvRectangle(m_colorImg, cvPoint(p1.x, p1.y), cvPoint(p1.x+p1.width, p1.y+p1.height), cvScalar(255,0,0), 2);
-		}else {
-			m_strStt = "";	
-			cvShowImage("Hand Segmentation", m_nohandImg);
+		
+			cvShowImage("Camera", m_colorImg);
+			FrameEnd(m_pp);
+		
+			m_strFPS.Format( "%d", FPS(g_time, g_totalMS, g_frameCnt));
+			SetDlgItemText(IDC_FPS, m_strFPS);
+			cvWaitKey(3);
 		}
+		else if(m_cboMode.GetCurSel() == 1){
+			FrameStart(m_pp);
+			m_gesture = m_pp->QueryGesture();
+			m_colorImg = QueryColorImage(m_pp);
+			//cvPutText(m_colorImg, BasicGestures(m_gesture), cvPoint(10, 40), &m_cvFont, cvScalar(0, 0, 180));
+			//DrawGeoNode(m_pp, m_colorImg, m_gesture, 1);
+			CvPoint tipPoint = HandTracking(m_pp, m_colorImg, m_gesture, m_pos2d, m_posc, m_projection, tipPointArr, tipPointArr_R, m_pointEnd);
+			
+			for(vector<CvPoint>::iterator iter = tipPointArr.begin(); iter < tipPointArr.end(); iter++){
+				cvCircle(m_colorImg, *iter, 2,  Scalar(255, 0, 0), 2 );
+			}
 
-		
-		cvShowImage("Camera", m_colorImg);
-		FrameEnd(m_pp);
-		
-		m_strFPS.Format( "%d", FPS(g_time, g_totalMS, g_frameCnt));
-		SetDlgItemText(IDC_FPS, m_strFPS);
-		cvWaitKey(3);
+			cvFlip(m_colorImg, m_colorImg, 1);
+
+		//	cvRectangle(m_colorImg, cvPoint(270, 0), cvPoint(370, 35), cvScalar(50, 100, 100), CV_FILLED);
+		//	cvPutText(m_colorImg, "SAVE", cvPoint(290, 25), &m_cvFont, cvScalar(0, 0, 180));
+			
+			if(m_cbMode2.GetCurSel() == 1){
+				if(tipPoint.x!= -1 && tipPoint.x > 270 && tipPoint.x < 370 && tipPoint.y > 10 && tipPoint.y < 45){
+					drawButton(m_colorImg, cvRect(270, 10, 100, 45), cvPoint(290, 40), "SAVE", cvScalar(100, 100, 100), cvScalar(150, 150, 150));
+					string fileName    = "savedPath.txt";
+					fstream file(fileName.c_str(), ios::out);
+
+					for(vector<CvPoint>::iterator iter = tipPointArr_R.begin(); iter < tipPointArr_R.end(); iter++){
+						file << "\t" << "path.push_back(Point2D(" << iter->x << "," 
+							 << iter->y << "));" << endl;
+					}
+					file.close();
+				}
+				else    
+				drawButton(m_colorImg, cvRect(270, 10, 100, 45), cvPoint(290, 40), "SAVE", cvScalar(0, 0, 0), cvScalar(255, 255, 255));
+			
+			}
+			else 
+				if(m_pointEnd && tipPointArr.size() > 10){
+				RecognitionResult result = m_dynamicG.recognize(Cvt2Path2D(tipPointArr_R), "DEFAULT");
+				cvPutText(m_colorImg, result.name.c_str(), cvPoint(10, 25), &m_cvFont, cvScalar(0, 0, 180));
+
+				if(tipPoint.x!= -1 && tipPoint.x > 270 && tipPoint.x < 370 && tipPoint.y > 10 && tipPoint.y < 45){
+					drawButton(m_colorImg, cvRect(270, 10, 100, 45), cvPoint(290, 40), "DONE", cvScalar(100, 100, 100), cvScalar(150, 150, 150));
+					m_pointEnd = false;
+					tipPointArr.clear();
+					tipPointArr_R.clear();
+				}
+				else    
+				drawButton(m_colorImg, cvRect(270, 10, 100, 45), cvPoint(290, 40), "DONE", cvScalar(0, 0, 0), cvScalar(255, 255, 255));
+
+			}
+			
+			cvShowImage("Camera", m_colorImg);
+			FrameEnd(m_pp);
+			cvWaitKey(3);
+		}
 	}
-	
 	m_pp->Close();
 	m_pp->Release();
 	delete m_hand;
@@ -229,6 +306,13 @@ UINT CVSLReaderDlg::VSLDisplay(){
 	cvReleaseImage(&m_nohandImg);
 
 	return 0;
+
+}
+
+void CVSLReaderDlg::drawButton(IplImage* Image, CvRect regionButton, CvPoint regionText, CString Text, CvScalar colorButton, CvScalar colorText)
+{
+	cvRectangle(Image, cvPoint(regionButton.x, regionButton.y), cvPoint(regionButton.x + regionButton.width, regionButton.y + regionButton.height), colorButton, CV_FILLED);
+	cvPutText(Image, Text, regionText, &m_cvFont, colorText);
 }
 
 void CVSLReaderDlg::TextTimeStamp(CString src, CString &txtOut, const int time){
@@ -260,4 +344,14 @@ void CVSLReaderDlg::OnBnClickedButtonExit()
 	m_bthrdStart = FALSE;
 	m_thrdVSL->SuspendThread();
 	OnCancel();
+}
+
+Path2D CVSLReaderDlg::Cvt2Path2D(vector<CvPoint> PointArr){
+
+	Path2D path;
+	for(vector<CvPoint>::iterator iter = PointArr.begin(); iter < PointArr.end(); iter++){
+		path.push_back(Point2D(iter->x, iter->y));
+	}
+
+	return path;
 }

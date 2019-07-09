@@ -4,6 +4,8 @@
 using namespace cv;
 using namespace std;
 
+
+
 void InitSenz3D(UtilPipeline *pp);
 void FrameStart(UtilPipeline *pp);
 void FrameEnd(UtilPipeline *pp);
@@ -19,6 +21,8 @@ CvPoint Projection(UtilPipeline *pp, int x, int y, PXCPoint3DF32 *pos2d,
 				   PXCPointF32 *posc, PXCProjection* projection);
 /*typeImg: 0:depth, 1: color */
 void DrawGeoNode(UtilPipeline *pp, IplImage* Image, PXCGesture *gesture, int typeImg);
+CvPoint HandTracking(UtilPipeline *pp, IplImage* Image, PXCGesture *gesture, PXCPoint3DF32 *pos2d, PXCPointF32 *posc, 
+				  PXCProjection* projection, vector<CvPoint> &tipPointArr, vector<CvPoint> &tipPointArr_R, bool &pointEnd);
 CvRect GetHandRegion(UtilPipeline *pp, PXCGesture *gesture, PXCPoint3DF32 *pos2d, PXCPointF32 *posc, 
 					 PXCProjection* projection, int d_size, CvRect& HandRegionDepth, CString &stt);
 char* BasicGestures(PXCGesture *gesture);

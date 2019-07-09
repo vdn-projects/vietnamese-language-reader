@@ -66,6 +66,18 @@
     <ClInclude Include="VSLLightPro.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="GeometricRecognizer.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="GeometricRecognizerTypes.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="GestureTemplate.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="SampleGestures.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="VSL Reader.cpp">
@@ -102,6 +114,9 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="VSLHandFeature.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="GeometricRecognizer.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

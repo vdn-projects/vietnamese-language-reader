@@ -2,6 +2,8 @@
 #include "VSLStreamRender.h"
 
 
+bool thumbUp = false;
+//bool pointEnd = false;
 
 
 void InitSenz3D(UtilPipeline *pp){
@@ -161,7 +163,7 @@ void DrawGeoNode(UtilPipeline *pp, IplImage* Image, PXCGesture *gesture, int typ
 	gesture->QueryNodeData(0,PXCGesture::GeoNode::LABEL_BODY_HAND_SECONDARY,10,nodes[1]);
 	gesture->QueryNodeData(0,PXCGesture::GeoNode::LABEL_BODY_ELBOW_PRIMARY,&nodes[0][10]);
 	gesture->QueryNodeData(0,PXCGesture::GeoNode::LABEL_BODY_ELBOW_SECONDARY,&nodes[1][10]);
-
+/*
 	if (nodes[0][0].body > 0) 
 	{
 	//	printf("Hand 1: %d\n", nodes[0][0].openness);
@@ -170,7 +172,7 @@ void DrawGeoNode(UtilPipeline *pp, IplImage* Image, PXCGesture *gesture, int typ
 	{
 	//	printf("Hand 2%d\n", nodes[1][0].openness);
 	}
-
+*/
 	for (int i = 0; i < 2; i++) {
 		for (int j = 0; j < 11; j++) {
 			if (nodes[i][j].body <= 0) continue;
@@ -187,6 +189,65 @@ void DrawGeoNode(UtilPipeline *pp, IplImage* Image, PXCGesture *gesture, int typ
 		}
 	}
  }
+
+CvPoint HandTracking(UtilPipeline *pp, IplImage* Image, PXCGesture *gesture, PXCPoint3DF32 *pos2d, PXCPointF32 *posc, 
+				     PXCProjection* projection, vector<CvPoint> &tipPointArr, vector<CvPoint> &tipPointArr_R, bool &pointEnd)
+{
+	CvPoint tipPoint = {-1, -1};
+	CvPoint tipPoint_R = {-1, -1};
+	PXCGesture::GeoNode nodes[2][11]={0};
+	gesture->QueryNodeData(0,PXCGesture::GeoNode::LABEL_BODY_HAND_PRIMARY,10,nodes[0]);
+	gesture->QueryNodeData(0,PXCGesture::GeoNode::LABEL_BODY_HAND_SECONDARY,10,nodes[1]);
+	gesture->QueryNodeData(0,PXCGesture::GeoNode::LABEL_BODY_ELBOW_PRIMARY,&nodes[0][10]);
+	gesture->QueryNodeData(0,PXCGesture::GeoNode::LABEL_BODY_ELBOW_SECONDARY,&nodes[1][10]);
+/*
+	if (nodes[0][0].body > 0) 
+	{
+	//	printf("Hand 1: %d\n", nodes[0][0].openness);
+	}
+	if (nodes[1][0].body > 0) 
+	{
+	//	printf("Hand 2%d\n", nodes[1][0].openness);
+	}
+*/
+	
+	if(nodes[0][0].body > 0) {
+		PXCGesture::Gesture gestures[1]={0};
+		gesture->QueryGestureData(0,PXCGesture::GeoNode::LABEL_BODY_HAND_PRIMARY,0,&gestures[0]);		
+		if (gestures[0].body > 0){
+		if(gestures[0].label == PXCGesture::Gesture::LABEL_POSE_BIG5){
+			pointEnd = false;
+			thumbUp = false;
+			tipPointArr.clear();
+			tipPointArr_R.clear();
+		}
+		if(gestures[0].label == PXCGesture::Gesture::LABEL_POSE_THUMB_UP) thumbUp = true;
+		}
+		
+
+		CvPoint palmPoint1 = Projection(pp, (int)nodes[0][0].positionImage.x, (int)nodes[0][0].positionImage.y, pos2d, posc, projection);
+		cvCircle(Image, palmPoint1, 8,  Scalar(0, 150, 255), 10 );
+		
+		if(nodes[1][0].body > 0){
+			CvPoint palmPoint2 = Projection(pp, (int)nodes[1][0].positionImage.x, (int)nodes[1][0].positionImage.y, pos2d, posc, projection);
+			cvCircle(Image, palmPoint2, 8,  Scalar(255, 150, 0), 10 );
+		}
+
+		tipPoint_R = cvPoint((int)nodes[0][2].positionImage.x, (int)nodes[0][2].positionImage.y);
+		tipPoint = Projection(pp, (int)nodes[0][2].positionImage.x, (int)nodes[0][2].positionImage.y, pos2d, posc, projection);
+		cvCircle(Image, tipPoint, 5,  Scalar(0, 0, 255), 2);
+
+		if(thumbUp && !pointEnd){
+			tipPointArr.push_back(tipPoint);
+			tipPointArr_R.push_back(tipPoint_R);
+			if (nodes[1][0].body > 0 && nodes[0][0].body > 0) {
+				pointEnd = true;
+			}
+		}
+	}
+
+	return tipPoint;
+}
 
 /*
 CvPoint HandSignal(PXCGesture *gesture){
@@ -224,7 +285,7 @@ char* BasicGestures(PXCGesture *gesture)
 	gesture->QueryGestureData(0,PXCGesture::GeoNode::LABEL_BODY_HAND_PRIMARY,0,&gestures[0]);
 	
 	if (gestures[0].body > 0)
-	for (int j=0; j<10; j++) {
+		for (int j=0; j<10; j++) {
 		if (ges_array[j].label == gestures[0].label) 
 			ges_name = ges_array[j].gesture_name;
 		//SetTimer(hwndDlg,gesture_panels[i],3000,0);
@@ -237,12 +298,12 @@ int big5signal(UtilPipeline *pp, PXCGesture *gesture, CvRect &handRegion){
 	int d = 0;
 	double distance = 0;
 	PXCGesture::GeoNode handnodes[1][10]={0};
-	PXCGesture::Gesture big5[1]={0};		
+	PXCGesture::Gesture big5[1]={0};
 	gesture->QueryGestureData(0,PXCGesture::GeoNode::LABEL_BODY_HAND_LEFT,0, &big5[0]);
 	gesture->QueryNodeData(0,PXCGesture::GeoNode::LABEL_BODY_HAND_LEFT,10,handnodes[0]);
 	
 	
-	if(handnodes[0][0].body>0 && handnodes[0][3].body >0 && 
+	if(handnodes[0][0].body>0 && handnodes[0][3].body >0 &&
 	   big5[0].label == PXCGesture::Gesture::LABEL_POSE_BIG5){
 		CvPoint p1 = cvPoint(handnodes[0][0].positionImage.x, handnodes[0][0].positionImage.y); //palm position
 		distance = Distance(pp, p1.x, p1.y);

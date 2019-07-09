@@ -15,6 +15,7 @@
 #include "cvaux.h"
 #include "opencv2/opencv.hpp"
 
+#define PI 3.14159265359
 #define DEPTH_H 240
 #define DEPTH_W 320
 #define COLOR_H 480

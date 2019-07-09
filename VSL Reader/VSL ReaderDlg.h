@@ -6,6 +6,11 @@
 #include "VSLSegmentation.h"
 #include "VSLHandFunctions.h"
 #include "SubFunctions.h"
+#include "GeometricRecognizer.h"
+#include "afxwin.h"
+
+using namespace std;
+using namespace DollarRecognizer;
 
 // CVSLReaderDlg dialog
 class CVSLReaderDlg : public CDialogEx
@@ -65,6 +70,16 @@ public:
 	afx_msg void OnBnClickedButtonClear();
 	CString m_timeStamp;
 	afx_msg void OnBnClickedButtonExit();
+
+	void InitComboBox(void);
+	CComboBox m_cboMode;
+	void drawButton(IplImage* Image, CvRect regionButton, CvPoint regionText, CString Text, CvScalar colorButton, CvScalar colorText);
+
+	GeometricRecognizer m_dynamicG;
+
+	CComboBox m_cbMode2;
+	bool m_pointEnd;
+	Path2D Cvt2Path2D(vector<CvPoint> PointArr);
 };
 
 UINT RunDialog( LPVOID pParam );
